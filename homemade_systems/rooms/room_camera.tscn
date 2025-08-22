@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://31ddb48ngbfc"]
+
+[ext_resource type="Script" uid="uid://dlfu0bucschnd" path="res://homemade_systems/rooms/room_camera.gd" id="1_lpbg6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a88i6"]
+size = Vector2(6, 11)
+
+[node name="RoomCamera2D" type="Camera2D"]
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+script = ExtResource("1_lpbg6")
+
+[node name="RoomDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomDetector"]
+shape = SubResource("RectangleShape2D_a88i6")
+debug_color = Color(0, 0.6, 0.701961, 0.811765)
+
+[node name="RoomTransitionTimer" type="Timer" parent="."]
+one_shot = true

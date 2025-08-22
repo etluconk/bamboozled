@@ -1,0 +1,86 @@
+[gd_scene load_steps=8 format=3 uid="uid://dhi8xsc0uej11"]
+
+[ext_resource type="Script" uid="uid://bt31sf7i1ise4" path="res://systems/characters/base_character.gd" id="1_op5l7"]
+[ext_resource type="Script" uid="uid://t024iaxta2od" path="res://systems/characters/base_character_comp.gd" id="2_5swfl"]
+[ext_resource type="Script" uid="uid://covy3levpkdam" path="res://homemade_systems/platforming/gravity.gd" id="3_nv7lp"]
+[ext_resource type="Script" uid="uid://bs1fmrgfcp58e" path="res://homemade_systems/platforming/horizontal_movement.gd" id="4_sap4g"]
+[ext_resource type="Script" uid="uid://cspravpd3u4bj" path="res://homemade_systems/platforming/jump.gd" id="5_7jb1r"]
+[ext_resource type="Script" uid="uid://c5cmv8qhts3qg" path="res://homemade_systems/input/input_player_idx_comp.gd" id="6_d7w0y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ppsu"]
+size = Vector2(120, 120)
+
+[node name="BaseCharacter" type="CharacterBody2D"]
+collision_layer = 256
+collision_mask = 257
+script = ExtResource("1_op5l7")
+
+[node name="BaseCharacterComp" type="Node" parent="." node_paths=PackedStringArray("input_player_index_component")]
+script = ExtResource("2_5swfl")
+input_player_index_component = NodePath("../InputPlayerIdxComp")
+metadata/_custom_type_script = "uid://t024iaxta2od"
+
+[node name="GravityComp" type="Node" parent="." node_paths=PackedStringArray("input_player_index_component")]
+script = ExtResource("3_nv7lp")
+rise_gravity_strength = 3000.0
+fall_gravity_strength = 5000.0
+fall_velocity_cap = 5000.0
+input_player_index_component = NodePath("../InputPlayerIdxComp")
+metadata/_custom_type_script = "uid://covy3levpkdam"
+
+[node name="HorizontalMovementComp" type="Node" parent="." node_paths=PackedStringArray("input_player_index_component")]
+script = ExtResource("4_sap4g")
+top_speed = 1200.0
+velocity_cap = 1200.0
+floor_start_rate = 20000.0
+floor_stop_rate = 20000.0
+air_start_rate = 10000.0
+air_stop_rate = 10000.0
+input_player_index_component = NodePath("../InputPlayerIdxComp")
+metadata/_custom_type_script = "uid://bs1fmrgfcp58e"
+
+[node name="JumpComp" type="Node" parent="." node_paths=PackedStringArray("input_player_index_component")]
+script = ExtResource("5_7jb1r")
+jump_velocity = 1500.0
+jump_cancel_cutoff_divisor = 1.0
+buffer_dur = 0.1
+input_player_index_component = NodePath("../InputPlayerIdxComp")
+metadata/_custom_type_script = "uid://cspravpd3u4bj"
+
+[node name="InputPlayerIdxComp" type="Node" parent="."]
+script = ExtResource("6_d7w0y")
+metadata/_custom_type_script = "uid://c5cmv8qhts3qg"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+hframes = 2
+vframes = 2
+metadata/_aseprite_wizard_interface_config_ = {
+"animation_section": true,
+"layer_section": false,
+"output_section": true,
+"pending_changes": {},
+"slice_section": false
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 0,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "AnimationPlayer",
+"scale": "1.0",
+"slice": "",
+"source": "res://assets/characters/lulu.aseprite",
+"source_uid": 677768312704240833
+}
+metadata/_aseprite_wizard_source_file_hash_ = "06edb49dbf8f89d1bbaa4b1e53f30512"
+
+[node name="Collisionbox" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8ppsu")

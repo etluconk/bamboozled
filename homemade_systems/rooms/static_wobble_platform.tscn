@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvku84fcptyft"]
+
+[ext_resource type="Script" uid="uid://j8wf6pm6u2v" path="res://static_wobble_platform.gd" id="1_uyhde"]
+
+[node name="StaticWobblePlatform" type="StaticBody2D"]
+collision_mask = 0
+script = ExtResource("1_uyhde")
+platform_theme = 1
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]

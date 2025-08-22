@@ -1,0 +1,344 @@
+[gd_scene load_steps=23 format=4 uid="uid://bv8idni3878ri"]
+
+[ext_resource type="PackedScene" uid="uid://dhi8xsc0uej11" path="res://systems/characters/base_character.tscn" id="1_41i3d"]
+[ext_resource type="Script" uid="uid://cd6021h5u5swd" path="res://scenes/characters/lulu/lulu.gd" id="2_rsi2h"]
+[ext_resource type="PackedScene" uid="uid://cgpe3vypm6dnh" path="res://systems/characters/frame_data_system.tscn" id="3_07ryh"]
+[ext_resource type="Script" uid="uid://cs31ib8re1joa" path="res://systems/characters/move_frame_data.gd" id="3_hpm3l"]
+[ext_resource type="Script" uid="uid://cr21w6e5lh60r" path="res://systems/characters/move_frame.gd" id="4_myi47"]
+[ext_resource type="Script" uid="uid://d2qv5v1rck2aq" path="res://systems/characters/move_frame_shape.gd" id="5_stf62"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_myi47"]
+_data = PackedByteArray("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")
+size_override = Vector2(900, 900)
+
+[sub_resource type="Animation" id="Animation_07ryh"]
+length = 0.133333
+loop_mode = 1
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FrameDataSystem:active_move_frame_data_name")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_rsi2h"]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FrameDataSystem/Punch:progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.233333, 0.266667, 0.3, 0.333333, 0.366667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 4, 3, 2, 1, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FrameDataSystem:active_move_frame_data_name")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Punch"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [3, 4, 5, 6, 7, 8, 8, 7, 6, 5, 4, 3]
+}
+
+[sub_resource type="Animation" id="Animation_myi47"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FrameDataSystem:active_move_frame_data_name")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FrameDataSystem/Punch:progress")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hpm3l"]
+_data = {
+&"Idle": SubResource("Animation_07ryh"),
+&"Punch": SubResource("Animation_rsi2h"),
+&"RESET": SubResource("Animation_myi47")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6c0xs"]
+size = Vector2(120, 120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6bxem"]
+size = Vector2(120, 120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dc0px"]
+size = Vector2(30, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_myi47"]
+size = Vector2(30, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p8ycj"]
+size = Vector2(60, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_stf62"]
+size = Vector2(60, 90)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a7nfw"]
+size = Vector2(30, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lu4ds"]
+size = Vector2(60, 120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_be3rl"]
+size = Vector2(30, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ptpjw"]
+size = Vector2(90, 90)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ynxki"]
+size = Vector2(120, 60)
+
+[node name="Lulu" instance=ExtResource("1_41i3d")]
+script = ExtResource("2_rsi2h")
+
+[node name="Sprite2D" parent="." index="5"]
+texture = SubResource("PortableCompressedTexture2D_myi47")
+hframes = 3
+vframes = 3
+frame = 3
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": true,
+"embed_tex": true,
+"i_mode": 0,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "AnimationPlayer",
+"scale": "1.0",
+"slice": "",
+"source": "res://assets/characters/lulu.aseprite",
+"source_uid": 677768312704240833
+}
+metadata/_aseprite_wizard_source_file_hash_ = "4d74258b2fd277e580d5d8b53449ef3f"
+
+[node name="Collisionbox" parent="." index="6"]
+visible = false
+debug_color = Color(0.65427, 0.517664, 7.70092e-07, 0.42)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="7"]
+callback_mode_process = 0
+libraries = {
+&"": SubResource("AnimationLibrary_hpm3l")
+}
+autoplay = "Idle"
+
+[node name="FrameDataSystem" parent="." index="8" instance=ExtResource("3_07ryh")]
+
+[node name="Idle" type="Node2D" parent="FrameDataSystem" index="0"]
+visible = false
+script = ExtResource("3_hpm3l")
+metadata/_custom_type_script = "uid://cs31ib8re1joa"
+
+[node name="MoveFrame" type="Node2D" parent="FrameDataSystem/Idle" index="0"]
+script = ExtResource("4_myi47")
+metadata/_custom_type_script = "uid://cr21w6e5lh60r"
+
+[node name="MoveFrameShape" type="CollisionShape2D" parent="FrameDataSystem/Idle/MoveFrame" index="0"]
+shape = SubResource("RectangleShape2D_6c0xs")
+debug_color = Color(0, 0.643137, 0.313726, 0.419608)
+script = ExtResource("5_stf62")
+shape_type = 1
+metadata/_custom_type_script = "uid://d2qv5v1rck2aq"
+
+[node name="Punch" type="Node2D" parent="FrameDataSystem" index="3"]
+visible = false
+script = ExtResource("3_hpm3l")
+progress = 1
+metadata/_custom_type_script = "uid://cs31ib8re1joa"
+
+[node name="MoveFrame" type="Node2D" parent="FrameDataSystem/Punch" index="0"]
+script = ExtResource("4_myi47")
+metadata/_custom_type_script = "uid://cr21w6e5lh60r"
+
+[node name="MoveFrameShape" type="CollisionShape2D" parent="FrameDataSystem/Punch/MoveFrame" index="0"]
+shape = SubResource("RectangleShape2D_6bxem")
+debug_color = Color(0, 0.643137, 0.313726, 0.419608)
+script = ExtResource("5_stf62")
+shape_type = 1
+metadata/_custom_type_script = "uid://d2qv5v1rck2aq"
+
+[node name="MoveFrame6" type="Node2D" parent="FrameDataSystem/Punch" index="1"]
+visible = false
+script = ExtResource("4_myi47")
+metadata/_custom_type_script = "uid://cr21w6e5lh60r"
+
+[node name="MoveFrameShape" type="CollisionShape2D" parent="FrameDataSystem/Punch/MoveFrame6" index="0"]
+position = Vector2(45, 15)
+shape = SubResource("RectangleShape2D_dc0px")
+debug_color = Color(1, 0.00784314, 0.0431373, 0.419608)
+script = ExtResource("5_stf62")
+metadata/_custom_type_script = "uid://d2qv5v1rck2aq"
+
+[node name="MoveFrameShape2" type="CollisionShape2D" parent="FrameDataSystem/Punch/MoveFrame6" index="1"]
+shape = SubResource("RectangleShape2D_6bxem")
+debug_color = Color(0, 0.643137, 0.313726, 0.419608)
+script = ExtResource("5_stf62")
+shape_type = 1
+metadata/_custom_type_script = "uid://d2qv5v1rck2aq"
+
+[node name="MoveFrame2" type="Node2D" parent="FrameDataSystem/Punch" index="2"]
+visible = false
+script = ExtResource("4_myi47")
+metadata/_custom_type_script = "uid://cr21w6e5lh60r"
+
+[node name="MoveFrameShape" type="CollisionShape2D" parent="FrameDataSystem/Punch/MoveFrame2" index="0"]
+position = Vector2(75, 0)
+shape = SubResource("RectangleShape2D_myi47")
+debug_color = Color(1, 0.00784314, 0.0431373, 0.419608)
+script = ExtResource("5_stf62")
+metadata/_custom_type_script = "uid://d2qv5v1rck2aq"
+
+[node name="MoveFrameShape2" type="CollisionShape2D" parent="FrameDataSystem/Punch/MoveFrame2" index="1"]
+position = Vector2(60, 15)
+shape = SubResource("RectangleShape2D_p8ycj")
+debug_color = Color(1, 0.00784314, 0.0431373, 0.419608)
+script = ExtResource("5_stf62")
+metadata/_custom_type_script = "uid://d2qv5v1rck2aq"
+
+[node name="MoveFrameShape3" type="CollisionShape2D" parent="FrameDataSystem/Punch/MoveFrame2" index="2"]
+shape = SubResource("RectangleShape2D_6bxem")
+debug_color = Color(0, 0.643137, 0.313726, 0.419608)
+script = ExtResource("5_stf62")
+shape_type = 1
+metadata/_custom_type_script = "uid://d2qv5v1rck2aq"
+
+[node name="MoveFrame3" type="Node2D" parent="FrameDataSystem/Punch" index="3"]
+visible = false
+script = ExtResource("4_myi47")
+metadata/_custom_type_script = "uid://cr21w6e5lh60r"
+
+[node name="MoveFrameShape" type="CollisionShape2D" parent="FrameDataSystem/Punch/MoveFrame3" index="0"]
+position = Vector2(90, -15)
+shape = SubResource("RectangleShape2D_stf62")
+debug_color = Color(1, 0.00784314, 0.0431373, 0.419608)
+script = ExtResource("5_stf62")
+metadata/_custom_type_script = "uid://d2qv5v1rck2aq"
+
+[node name="MoveFrameShape2" type="CollisionShape2D" parent="FrameDataSystem/Punch/MoveFrame3" index="1"]
+position = Vector2(45, 0)
+shape = SubResource("RectangleShape2D_a7nfw")
+debug_color = Color(1, 0.00784314, 0.0431373, 0.419608)
+script = ExtResource("5_stf62")
+metadata/_custom_type_script = "uid://d2qv5v1rck2aq"
+
+[node name="MoveFrameShape3" type="CollisionShape2D" parent="FrameDataSystem/Punch/MoveFrame3" index="2"]
+shape = SubResource("RectangleShape2D_6bxem")
+debug_color = Color(0, 0.643137, 0.313726, 0.419608)
+script = ExtResource("5_stf62")
+shape_type = 1
+metadata/_custom_type_script = "uid://d2qv5v1rck2aq"
+
+[node name="MoveFrame4" type="Node2D" parent="FrameDataSystem/Punch" index="4"]
+visible = false
+script = ExtResource("4_myi47")
+metadata/_custom_type_script = "uid://cr21w6e5lh60r"
+
+[node name="MoveFrameShape" type="CollisionShape2D" parent="FrameDataSystem/Punch/MoveFrame4" index="0"]
+position = Vector2(90, -30)
+shape = SubResource("RectangleShape2D_lu4ds")
+debug_color = Color(1, 0.00784314, 0.0431373, 0.419608)
+script = ExtResource("5_stf62")
+metadata/_custom_type_script = "uid://d2qv5v1rck2aq"
+
+[node name="MoveFrameShape2" type="CollisionShape2D" parent="FrameDataSystem/Punch/MoveFrame4" index="1"]
+position = Vector2(45, 0)
+shape = SubResource("RectangleShape2D_be3rl")
+debug_color = Color(1, 0.00784314, 0.0431373, 0.419608)
+script = ExtResource("5_stf62")
+metadata/_custom_type_script = "uid://d2qv5v1rck2aq"
+
+[node name="MoveFrameShape3" type="CollisionShape2D" parent="FrameDataSystem/Punch/MoveFrame4" index="2"]
+shape = SubResource("RectangleShape2D_6bxem")
+debug_color = Color(0, 0.643137, 0.313726, 0.419608)
+script = ExtResource("5_stf62")
+shape_type = 1
+metadata/_custom_type_script = "uid://d2qv5v1rck2aq"
+
+[node name="MoveFrame5" type="Node2D" parent="FrameDataSystem/Punch" index="5"]
+visible = false
+script = ExtResource("4_myi47")
+metadata/_custom_type_script = "uid://cr21w6e5lh60r"
+
+[node name="MoveFrameShape" type="CollisionShape2D" parent="FrameDataSystem/Punch/MoveFrame5" index="0"]
+position = Vector2(75, -15)
+shape = SubResource("RectangleShape2D_ptpjw")
+debug_color = Color(1, 0.00784314, 0.0431373, 0.419608)
+script = ExtResource("5_stf62")
+metadata/_custom_type_script = "uid://d2qv5v1rck2aq"
+
+[node name="MoveFrameShape2" type="CollisionShape2D" parent="FrameDataSystem/Punch/MoveFrame5" index="1"]
+position = Vector2(60, -90)
+shape = SubResource("RectangleShape2D_ynxki")
+debug_color = Color(1, 0.00784314, 0.0431373, 0.419608)
+script = ExtResource("5_stf62")
+metadata/_custom_type_script = "uid://d2qv5v1rck2aq"
+
+[node name="MoveFrameShape3" type="CollisionShape2D" parent="FrameDataSystem/Punch/MoveFrame5" index="2"]
+shape = SubResource("RectangleShape2D_6bxem")
+debug_color = Color(0, 0.643137, 0.313726, 0.419608)
+script = ExtResource("5_stf62")
+shape_type = 1
+metadata/_custom_type_script = "uid://d2qv5v1rck2aq"

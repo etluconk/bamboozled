@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://dw10kcrn6wk3w"]
+
+[ext_resource type="Script" uid="uid://bydj5vbpag1ya" path="res://homemade_systems/wobbly_poly/wobble_line_2d.gd" id="1_dimij"]
+
+[node name="WobbleLine2D" type="Line2D"]
+self_modulate = Color(1, 1, 1, 0)
+width = 1.0
+default_color = Color(0, 0, 0, 1)
+joint_mode = 1
+script = ExtResource("1_dimij")
+points_intensity = 8.0
+whole_intensity = 3.0
+
+[node name="DisplayLine" type="Line2D" parent="."]
+width = 1.0
+default_color = Color(0, 0, 0, 1)
+joint_mode = 1
+metadata/_edit_lock_ = true

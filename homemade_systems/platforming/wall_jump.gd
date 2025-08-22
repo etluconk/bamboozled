@@ -114,7 +114,7 @@ func can_wall_jump(on_wall_left: bool, on_wall_right: bool) -> bool:
 	return p.is_on_wall_only() or on_wall_left or on_wall_right
 
 func wants_to_jump() -> bool:
-	var wants = player_input_just_pressed("jump")
+	var wants = player_input_just_pressed("up")
 	return wants
 
 func buffered_a_jump() -> bool:

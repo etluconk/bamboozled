@@ -67,7 +67,7 @@ func can_jump() -> bool:
     return p.is_on_floor() or coyote_time_remaining > 0
 
 func wants_to_jump() -> bool:
-    return player_input_just_pressed("jump")
+    return player_input_just_pressed("up")
 
 func buffered_a_jump() -> bool:
     return buffer_time_remaining > 0
@@ -76,4 +76,4 @@ func can_cancel_jump() -> bool:
     return p.velocity.y < (-jump_velocity) / jump_cancel_cutoff_divisor
 
 func wants_to_cancel_jump() -> bool:
-    return !player_input_pressed("jump")
+    return !player_input_pressed("up")

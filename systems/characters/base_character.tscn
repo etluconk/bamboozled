@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhi8xsc0uej11"]
+[gd_scene load_steps=7 format=3 uid="uid://dhi8xsc0uej11"]
 
 [ext_resource type="Script" uid="uid://bt31sf7i1ise4" path="res://systems/characters/base_character.gd" id="1_op5l7"]
-[ext_resource type="Script" uid="uid://t024iaxta2od" path="res://systems/characters/base_character_comp.gd" id="2_5swfl"]
 [ext_resource type="Script" uid="uid://covy3levpkdam" path="res://homemade_systems/platforming/gravity.gd" id="3_nv7lp"]
 [ext_resource type="Script" uid="uid://bs1fmrgfcp58e" path="res://homemade_systems/platforming/horizontal_movement.gd" id="4_sap4g"]
 [ext_resource type="Script" uid="uid://cspravpd3u4bj" path="res://homemade_systems/platforming/jump.gd" id="5_7jb1r"]
@@ -14,11 +13,6 @@ size = Vector2(120, 120)
 collision_layer = 256
 collision_mask = 257
 script = ExtResource("1_op5l7")
-
-[node name="BaseCharacterComp" type="Node" parent="." node_paths=PackedStringArray("input_player_index_component")]
-script = ExtResource("2_5swfl")
-input_player_index_component = NodePath("../InputPlayerIdxComp")
-metadata/_custom_type_script = "uid://t024iaxta2od"
 
 [node name="GravityComp" type="Node" parent="." node_paths=PackedStringArray("input_player_index_component")]
 script = ExtResource("3_nv7lp")

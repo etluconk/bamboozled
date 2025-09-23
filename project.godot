@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Marble Battle Game"
 run/main_scene="uid://65nba31cmk2n"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]

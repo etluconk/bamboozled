@@ -184,6 +184,7 @@ debug_color = Color(0.65427, 0.517664, 7.70092e-07, 0.42)
 texture = SubResource("PortableCompressedTexture2D_stf62")
 hframes = 4
 vframes = 3
+frame = 9
 metadata/_aseprite_wizard_config_ = {
 "convert_fps_field": 60.0,
 "convert_ms_field": 16.0,
@@ -205,13 +206,15 @@ metadata/_aseprite_wizard_config_ = {
 metadata/_aseprite_wizard_source_file_hash_ = "fa1a2b700ca6cf343ecdcc298a46de2a"
 
 [node name="FrameDataSystem" parent="." index="6"]
-active_move_frame_data_name = "Idle"
+active_move_frame_data_name = "Punch"
 
 [node name="Idle" type="Node2D" parent="FrameDataSystem" index="2"]
+visible = false
 script = ExtResource("3_07ryh")
 metadata/_custom_type_script = "uid://cs31ib8re1joa"
 
 [node name="MoveFrame" type="Node2D" parent="FrameDataSystem/Idle" index="0"]
+visible = false
 script = ExtResource("4_hpm3l")
 state_properties = SubResource("Resource_p8ycj")
 metadata/_custom_type_script = "uid://cr21w6e5lh60r"
@@ -225,10 +228,10 @@ metadata/_custom_type_script = "uid://d2qv5v1rck2aq"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FrameDataSystem/Idle/MoveFrame/Hurtbox" index="0"]
 shape = SubResource("RectangleShape2D_p8ycj")
+disabled = true
 debug_color = Color(0, 0.6431373, 0.3137255, 0.41960785)
 
 [node name="Punch" type="Node2D" parent="FrameDataSystem" index="3"]
-visible = false
 script = ExtResource("3_07ryh")
 progress = 1
 move_activation_input_action = SubResource("Resource_a7nfw")
@@ -253,7 +256,6 @@ disabled = true
 debug_color = Color(0, 0.6431373, 0.3137255, 0.41960785)
 
 [node name="MoveFrame2" type="Node2D" parent="FrameDataSystem/Punch" index="1"]
-visible = false
 script = ExtResource("4_hpm3l")
 state_properties = SubResource("Resource_myi47")
 metadata/_custom_type_script = "uid://cr21w6e5lh60r"
@@ -267,7 +269,6 @@ metadata/_custom_type_script = "uid://d2qv5v1rck2aq"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FrameDataSystem/Punch/MoveFrame2/Hurtbox" index="0"]
 shape = SubResource("RectangleShape2D_stf62")
-disabled = true
 debug_color = Color(0, 0.6431373, 0.3137255, 0.41960785)
 
 [node name="Hitbox" type="Area2D" parent="FrameDataSystem/Punch/MoveFrame2" index="1"]
@@ -279,13 +280,11 @@ metadata/_custom_type_script = "uid://d2qv5v1rck2aq"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FrameDataSystem/Punch/MoveFrame2/Hitbox" index="0"]
 position = Vector2(70, 0)
 shape = SubResource("RectangleShape2D_a7nfw")
-disabled = true
 debug_color = Color(1, 0.007843138, 0.043137256, 0.41960785)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="FrameDataSystem/Punch/MoveFrame2/Hitbox" index="1"]
 position = Vector2(135, -45)
 shape = SubResource("RectangleShape2D_lu4ds")
-disabled = true
 debug_color = Color(1, 0.007843138, 0.043137256, 0.41960785)
 
 [node name="MoveFrame3" type="Node2D" parent="FrameDataSystem/Punch" index="2"]

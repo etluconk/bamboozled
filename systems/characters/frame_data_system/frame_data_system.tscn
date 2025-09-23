@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgpe3vypm6dnh"]
+
+[ext_resource type="Script" uid="uid://d4d2uoo5imt6w" path="res://systems/characters/frame_data_system/frame_data_system.gd" id="1_1gn3k"]
+
+[node name="FrameDataSystem" type="Node2D"]
+script = ExtResource("1_1gn3k")
+metadata/_custom_type_script = "uid://d4d2uoo5imt6w"
+
+[node name="Hurtbox" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 512
+collision_mask = 1024
+
+[node name="Hitbox" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 1024
+collision_mask = 512

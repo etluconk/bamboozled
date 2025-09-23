@@ -28,9 +28,8 @@ func _physics_process(delta: float) -> void:
 
 	if enabled:
 		p.velocity.x = move_toward(p.velocity.x, top_speed * horizontal_input_direction(), rate * delta)
-
-	if cap_velocity:
-		p.velocity.x = clampf(p.velocity.x, -velocity_cap, velocity_cap)
+		if cap_velocity:
+			p.velocity.x = clampf(p.velocity.x, -velocity_cap, velocity_cap)
 
 	if horizontal_input_direction() > 0: horizontal_dir_facing = 1
 	if horizontal_input_direction() < 0: horizontal_dir_facing = -1

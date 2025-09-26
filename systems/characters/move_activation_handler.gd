@@ -8,9 +8,7 @@ func _ready() -> void:
 	connect_move_frame_data_signals()
 
 func _physics_process(_delta: float) -> void:
-	if animation_player is AnimationPlayer:
-		if !animation_player.is_playing():
-			animation_player.play("Idle")
+	pass
 
 func connect_move_frame_data_signals() -> void:
 	if not (frame_data_system is FrameDataSystem): return
@@ -27,4 +25,4 @@ func on_move_activation_input_action_activated(move_frame_data) -> void:
 			animation_player.play(move_frame_data.name)
 
 func go_to_hitstun() -> void:
-	animation_player.play("Idle")
+	pass

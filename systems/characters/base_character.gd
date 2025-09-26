@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name Character
 
 @export var player_idx = 0
+@export var animation_player : AnimationPlayer
 @onready var gravity_comp : GravityComp = $%GravityComp
 @onready var horizontal_movement_comp : HorizontalMovementComp = $%HorizontalMovementComp
 @onready var jump_comp : JumpComp = $%JumpComp
@@ -63,6 +64,9 @@ func state_grounded() -> void:
 
 	move_and_slide()
 
+	if !animation_player.is_playing():
+		animation_player.play("Idle")
+
 	if !state_properties.horizontal_dir_locked:
 		update_horizontal_dir_facing()
 	if state_properties.attack:
@@ -104,6 +108,9 @@ func leave_state_attack() -> void:
 func enter_state_hitstun() -> void:
 	# print("player " + str(player_idx) + " entering hitstun state")
 	move_activation_handler.go_to_hitstun()
+	apply_knockback()
+	if animation_player is AnimationPlayer:
+		animation_player.play("Hitstun")
 
 func state_hitstun() -> void:
 	gravity_comp.enabled = false
@@ -115,4 +122,5 @@ func state_hitstun() -> void:
 
 func leave_state_hitstun() -> void:
 	# print("player " + str(player_idx) + " leaving hitstun state")
-	pass
+	if animation_player is AnimationPlayer:
+		animation_player.play("Idle")

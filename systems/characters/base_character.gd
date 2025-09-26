@@ -127,7 +127,6 @@ func state_hitstun(delta : float) -> void:
 	horizontal_movement_comp.enabled = true
 	horizontal_movement_comp.player_has_control = false
 	jump_comp.enabled = false
-	apply_knockback()
 	move_and_slide()
 
 	hitstun_knockback_time_remaining -= delta

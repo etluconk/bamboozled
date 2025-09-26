@@ -72,43 +72,43 @@ script = ExtResource("6_myi47")
 size = Vector2(120, 120)
 
 [sub_resource type="Animation" id="Animation_p8ycj"]
-length = 0.53333336
+length = 0.26666668
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("FrameDataSystem:active_move_frame_data_name")
 tracks/0/interp = 1
-tracks/0/loop_wrap = false
+tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.2, 0.26666668, 0.33333334, 0.4, 0.46666667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0, 3, 4, 5, 6, 7, 8, 9]
+"values": ["Hitstun"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("FrameDataSystem:active_move_frame_data_name")
+tracks/1/path = NodePath("FrameDataSystem/Hitstun:progress")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Hitstun"]
+"values": [0]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("FrameDataSystem/Hitstun:progress")
+tracks/2/path = NodePath("Sprite2D:frame")
 tracks/2/interp = 1
-tracks/2/loop_wrap = true
+tracks/2/loop_wrap = false
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.1, 0.13333334, 0.16666667, 0.2, 0.23333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0]
+"values": [0, 3, 4, 5, 6, 7, 8, 9]
 }
 
 [sub_resource type="Animation" id="Animation_hpm3l"]
@@ -257,7 +257,6 @@ debug_color = Color(0.65427, 0.517664, 7.70092e-07, 0.42)
 texture = SubResource("PortableCompressedTexture2D_stf62")
 hframes = 4
 vframes = 4
-frame = 15
 metadata/_aseprite_wizard_config_ = {
 "convert_fps_field": 60.0,
 "convert_ms_field": 16.0,
@@ -276,7 +275,7 @@ metadata/_aseprite_wizard_config_ = {
 "source": "res://assets/characters/lulu.aseprite",
 "source_uid": 677768312704240833
 }
-metadata/_aseprite_wizard_source_file_hash_ = "314de30ea25680643afe2b533f5f63b9"
+metadata/_aseprite_wizard_source_file_hash_ = "70ffb537925fdcc456666e4b1b9520b4"
 
 [node name="FrameDataSystem" parent="." index="6"]
 active_move_frame_data_name = "Hitstun"

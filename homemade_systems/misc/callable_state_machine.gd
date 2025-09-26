@@ -38,6 +38,8 @@ func change_state(state_callable: Callable):
 
 
 func _set_state(state_name: String):
+	if current_state == state_name: return
+
 	if current_state:
 		var leave_callable = state_dictionary[current_state].leave as Callable
 		if !leave_callable.is_null():
